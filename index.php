@@ -30,9 +30,9 @@ if (!empty($_SESSION["email"])) {
     }
 }
 
-$controllerName = ucfirst($c) . "Controller"; // RegisterController
-require "controller/" . $c . "/" . $controllerName . ".php"; // controller/register/RegisterController.php
-$controller = new $controllerName(); // new RegisterController();
+$controllerName = ucfirst($c) . "Controller"; // ListStaffController
+require "controller/" . $c . "/" . $controllerName . ".php"; // controller/listStaff/ListStaffController.php
+$controller = new $controllerName(); // new ListStaffController();
 $controller->$a(); 
 
 ?>

@@ -44,7 +44,7 @@ class ListStaffController extends ListStaffAbstract {
 
         $totalStaffs = $staffRepostiory->getBy($conds);
         $pageNumber = ceil(count($totalStaffs) / $item_per_page);
-        require 'view/listUser.php';
+        require 'view/listStaff.php';
     }
 }
 ?>
