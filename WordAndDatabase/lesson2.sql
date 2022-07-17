@@ -11,7 +11,7 @@
  Target Server Version : 100422
  File Encoding         : 65001
 
- Date: 17/07/2022 11:58:44
+ Date: 17/07/2022 12:19:55
 */
 
 SET NAMES utf8mb4;
@@ -59,7 +59,10 @@ DROP TABLE IF EXISTS `role_action`;
 CREATE TABLE `role_action`  (
   `role_id` int(11) NOT NULL,
   `action_id` int(11) NOT NULL,
-  PRIMARY KEY (`role_id`, `action_id`) USING BTREE
+  PRIMARY KEY (`role_id`, `action_id`) USING BTREE,
+  INDEX `action_id`(`action_id`) USING BTREE,
+  CONSTRAINT `action_id` FOREIGN KEY (`action_id`) REFERENCES `action` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT,
+  CONSTRAINT `role_fk_1` FOREIGN KEY (`role_id`) REFERENCES `role` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT
 ) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
@@ -82,7 +85,9 @@ CREATE TABLE `staff`  (
   `email` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
   `password` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
   `role_id` int(11) NOT NULL,
-  PRIMARY KEY (`id`) USING BTREE
+  PRIMARY KEY (`id`) USING BTREE,
+  INDEX `role_fk`(`role_id`) USING BTREE,
+  CONSTRAINT `role_fk` FOREIGN KEY (`role_id`) REFERENCES `role` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT
 ) ENGINE = InnoDB AUTO_INCREMENT = 8 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
