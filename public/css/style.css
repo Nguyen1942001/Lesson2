@@ -1,0 +1,91 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+    list-style-type: none;
+}
+
+body {
+    max-width: 800px;
+	margin: auto;
+}
+
+#login {
+    padding: 50px 0 ;
+}
+
+.container {
+    border: 2px solid green;
+}
+
+.sub-container {
+    max-width: 80%;
+}
+
+.navbar-nav {
+    flex-direction: row !important;
+}
+
+.navbar-nav .nav-link {
+    color: #444;
+    margin-right: 20px;
+    padding-right: 12px;
+	padding-left: 12px;
+}
+
+.navbar-nav .nav-link.active, .navbar-nav .nav-link:hover {
+    background-color: var(--blue);
+    color: white;
+}
+
+.logo {
+    width: 120px;
+    height: 120px;
+}
+
+.block {
+    background-color: #fff;
+    border: 1px solid black;
+    padding: 30px;
+    margin: 50px 0;
+}
+
+#email {
+    color: rgb(161, 155, 155);
+}
+
+.keep-sign-in {
+    margin-bottom: 10px;
+}
+
+.block button {
+    color: white;
+}
+
+footer {
+    padding-left: 100px;
+    font-size: 10px;
+    color: rgb(161, 155, 155);
+}
+
+/* ========================== List User ========================== */
+.search {
+    margin-bottom: 30px;
+}
+
+.search form > input:first-child::placeholder {
+    font-size: 9px;
+    color: rgb(161, 155, 155);
+    text-align: center;
+}
+
+.search .form-control {
+    border: 6px solid rgb(214, 212, 212);
+}
+
+/* Thông báo lỗi validate */
+.error {
+    color: red;
+}
+
+
